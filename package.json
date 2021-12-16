@@ -5,7 +5,12 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "eslint": "eslint \"src/**/*.{ts,tsx}\" --cache && tsc --noEmit",
+    "eslint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix && tsc --noEmit",
+    "fix": "yarn prettier:write && yarn eslint:fix",
+    "prettier:write": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "react": "^17.0.0",
@@ -17,8 +22,17 @@
     "@types/jest": "^27.0.3",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
     "@vitejs/plugin-react": "^1.1.3",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.4.5",
+    "prettier": "^2.5.1",
     "ts-jest": "^27.1.1",
     "typescript": "^4.5.4",
     "vite": "^2.7.3"
