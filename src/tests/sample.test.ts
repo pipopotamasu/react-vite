@@ -1,4 +1,4 @@
-import { sum } from 'utils/sample';
+import { sum } from '@/utils/sample';
 
 describe('sumple test', () => {
   it('1 + 1 = 2', () => {
