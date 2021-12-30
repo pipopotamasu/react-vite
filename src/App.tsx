@@ -13,7 +13,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
-        <button onClick={() => alert(sum(1, 2))}>click me</button>
+        <button onClick={() => alert(sum(1, 2))} className="underline">
+          click me
+        </button>
         <Suspense fallback="loading...">
           <Routes>
             <Route path="/" element={<Home />} />
