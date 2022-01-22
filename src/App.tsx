@@ -1,6 +1,5 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { sum } from '@/utils/sample';
 import reactLogo from '@/assets/react-logo.svg';
 import viteLogo from '@/assets/vite-logo.svg';
 
@@ -9,7 +8,7 @@ const About = lazy(() => import('./About'));
 
 function App() {
   return (
-    <div className="h-full py-16">
+    <div className="h-full py-16 bg-gray-700 text-neutral-100">
       <header className="flex flex-col items-center">
         <h1 className="font-bold text-4xl mb-4">Hello vite-react!</h1>
         <div className="flex justify-center pl-8">
@@ -18,15 +17,16 @@ function App() {
         </div>
       </header>
       <main className="py-8 flex justify-center">
-        <div className="w-2/5">
-          <button onClick={() => alert(sum(1, 2))}>click me</button>
-          <Suspense fallback="loading...">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="about" element={<About />} />
-            </Routes>
-          </Suspense>
-        </div>
+        <section className="w-2/5">
+          <h2 className="text-2xl underline mb-3">Features</h2>
+          <ul className="list-disc pl-6">
+            <li>Vite with React, TypeScript and have already set up absolute path</li>
+            <li>Styled by Tailwind CSS v3</li>
+            <li>Use ESLint, Prettier</li>
+            <li>Test by Jest</li>
+            <li>Setup github actoins(CI) which makes test, lint, type check run</li>
+          </ul>
+        </section>
       </main>
     </div>
   );
