@@ -1,10 +1,5 @@
-import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import reactLogo from '@/assets/react-logo.svg';
 import viteLogo from '@/assets/vite-logo.svg';
-
-const Home = lazy(() => import('./Home'));
-const About = lazy(() => import('./About'));
 
 function App() {
   return (
