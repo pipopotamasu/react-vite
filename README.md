@@ -8,6 +8,7 @@ React app boilerplate based on vite.
 - Styled by Tailwind CSS v3
 - Use ESLint, Prettier
 - Test by Jest
+- Request mocking by msw for development environment
 - Setup github actoins(CI) which makes test, lint, type check run
 
 ## Getting started

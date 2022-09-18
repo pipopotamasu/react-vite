@@ -19,6 +19,7 @@ function App() {
             <li>Styled by Tailwind CSS v3</li>
             <li>Use ESLint, Prettier</li>
             <li>Test by Jest</li>
+            <li>Request mocking by msw for development environment</li>
             <li>Setup github actoins(CI) which makes test, lint, type check run</li>
           </ul>
         </section>
