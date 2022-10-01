@@ -1,5 +1,9 @@
+import { Link, Outlet, ReactLocation, Router } from '@tanstack/react-location';
 import reactLogo from '@/assets/react-logo.svg';
 import viteLogo from '@/assets/vite-logo.svg';
+import { routes } from '@/routes';
+
+const location = new ReactLocation();
 
 function App() {
   return (
@@ -11,9 +15,9 @@ function App() {
           <img src={reactLogo} alt="react-logo" className="w-72" />
         </div>
       </header>
-      <main className="py-8 flex justify-center">
-        <section className="w-2/5">
-          <h2 className="text-2xl underline mb-3">Features</h2>
+      <main className="py-8 flex flex-col items-center">
+        <section className="w-2/5 mb-4">
+          <h2 className="text-2xl mb-3">Features</h2>
           <ul className="list-disc pl-6">
             <li>Vite with React, TypeScript and have already set up absolute path</li>
             <li>Styled by Tailwind CSS v3</li>
@@ -22,6 +26,20 @@ function App() {
             <li>Request mocking by msw for development environment</li>
             <li>Setup github actoins(CI) which makes test, lint, type check run</li>
           </ul>
+        </section>
+        <section className="w-2/5">
+          <h2 className="text-2xl mb-3">Routing Example</h2>
+          <Router location={location} routes={routes}>
+            <div>
+              <Link className="underline mr-2" to="/" activeOptions={{ exact: true }}>
+                Home
+              </Link>
+              <Link className="underline" to="todos">
+                Todos
+              </Link>
+            </div>
+            <Outlet />
+          </Router>
         </section>
       </main>
     </div>

@@ -640,7 +640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.18.9":
+"@babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.7.6":
   version: 7.19.0
   resolution: "@babel/runtime@npm:7.19.0"
   dependencies:
@@ -1216,6 +1216,19 @@ __metadata:
   dependencies:
     "@sinonjs/commons": ^1.7.0
   checksum: 7d3aef54e17c1073101cb64d953157c19d62a40e261a30923fa1ee337b049c5f29cc47b1f0c477880f42b5659848ba9ab897607ac8ea4acd5c30ddcfac57fca6
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-location@npm:^3.7.4":
+  version: 3.7.4
+  resolution: "@tanstack/react-location@npm:3.7.4"
+  dependencies:
+    "@babel/runtime": ^7.16.7
+    history: ^5.2.0
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: 54dfa1c7d9f1be080ec63f392bb8f3e724ef194e8a6b3b044328efd1917913fbf27ce7e18af3e6a2eabd6fa7741e1242a4ea1fdd259aebee8ff8b9eaf6f2893e
   languageName: node
   linkType: hard
 
@@ -4088,6 +4101,15 @@ __metadata:
   version: 3.1.0
   resolution: "headers-polyfill@npm:3.1.0"
   checksum: a95257065684653b7185efbb9a380c547ea832002991b5adf0d90cd222073da2701be9dc2849d1970ecf15e8c35b383984358566afe6e76ca8ff1dbd7cdce3af
+  languageName: node
+  linkType: hard
+
+"history@npm:^5.2.0":
+  version: 5.3.0
+  resolution: "history@npm:5.3.0"
+  dependencies:
+    "@babel/runtime": ^7.7.6
+  checksum: d73c35df49d19ac172f9547d30a21a26793e83f16a78386d99583b5bf1429cc980799fcf1827eb215d31816a6600684fba9686ce78104e23bd89ec239e7c726f
   languageName: node
   linkType: hard
 
@@ -7465,6 +7487,7 @@ resolve@^2.0.0-next.3:
   version: 0.0.0-use.local
   resolution: "vite-react@workspace:."
   dependencies:
+    "@tanstack/react-location": ^3.7.4
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^13.4.0
     "@testing-library/user-event": ^14.4.3

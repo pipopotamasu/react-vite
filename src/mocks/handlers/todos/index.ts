@@ -6,13 +6,11 @@ const todos = [
   { id: 3, title: 'todo3', done: false },
 ];
 
-export const handlers = [
-  rest.get('/todos', (_, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json({
-        todos,
-      })
-    );
-  }),
-];
+export const todosHandler = rest.get('/todos', (_, res, ctx) => {
+  return res(
+    ctx.status(200),
+    ctx.json({
+      todos,
+    })
+  );
+});
