@@ -14,7 +14,7 @@ function App() {
             <img src={reactLogo} alt="react-logo" className="w-72" />
           </div>
         </header>
-        <main className="py-8 flex flex-col items-center">
+        <main className="py-8 flex flex-col items-center bg-gray-700">
           <section className="w-2/5 mb-4">
             <h2 className="text-2xl mb-3">Features</h2>
             <ul className="list-disc pl-6">
