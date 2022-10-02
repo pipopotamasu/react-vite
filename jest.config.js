@@ -5,10 +5,10 @@ module.exports = {
   moduleDirectories: ['node_modules', './src'],
   rootDir: './src',
   transform: {
-    '^.+\\.css$': '<rootDir>/tests/config/cssTransform.js',
-    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/tests/config/fileTransform.js',
+    '^.+\\.css$': '<rootDir>/test/config/cssTransform.js',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/test/config/fileTransform.js',
   },
-  setupFilesAfterEnv: ['<rootDir>/tests/config/setupTest.ts'],
+  setupFilesAfterEnv: ['<rootDir>/test/config/setupTest.ts'],
   moduleNameMapper: {
     '^@/(.+)': '<rootDir>/$1',
   },

@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import App from '@/App';
+import { About } from '../About';
 
-describe('App', () => {
+describe('About', () => {
   it('renders', async () => {
-    const { findByText } = render(<App />);
+    const { findByText } = render(<About />);
     await findByText('Hello vite-react!');
   });
 });
