@@ -1,7 +1,7 @@
 import { useTodos } from '../api/getTodos';
 
 export const Todos = () => {
-  const { data, isLoading } = useTodos();
+  const { data, isLoading } = useTodos({ config: { useErrorBoundary: false } });
 
   if (isLoading) return <>loading...</>;
 
