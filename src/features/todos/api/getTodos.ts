@@ -1,5 +1,4 @@
 import { useQuery } from 'react-query';
-
 import { axios } from '@/lib/axios';
 
 import type { ExtractFnReturnType, QueryConfig } from '@/lib/react-query';

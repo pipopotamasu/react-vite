@@ -8,7 +8,7 @@ const todos = [
 
 export const todosHandler = rest.get('/todos', (_, res, ctx) => {
   return res(
-    ctx.status(200),
+    ctx.status(500),
     ctx.json({
       todos,
     })

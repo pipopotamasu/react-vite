@@ -1,7 +1,14 @@
 import { useTodos } from '../api/getTodos';
 
 export const Todos = () => {
-  const { data, isLoading } = useTodos();
+  const { data, isLoading } = useTodos({
+    config: {
+      onError(e) {
+        console.log(1111);
+        console.log(e);
+      },
+    },
+  });
 
   if (isLoading) return <>loading...</>;
 
