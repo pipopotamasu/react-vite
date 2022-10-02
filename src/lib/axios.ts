@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const axios = Axios.create();
 
@@ -7,6 +8,7 @@ axios.interceptors.response.use(
     return response.data;
   },
   (error) => {
+    toast.error('Error');
     return Promise.reject(error);
   }
 );
