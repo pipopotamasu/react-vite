@@ -1,5 +1,6 @@
 import { Suspense, type ReactNode } from 'react';
 import { QueryClientProvider } from 'react-query';
+import { ToastContainer } from 'react-toastify';
 import { ReactLocation, Router } from '@tanstack/react-location';
 import { queryClient } from '@/lib/react-query';
 import { routes } from '@/routes';
@@ -18,6 +19,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
           {children}
         </Router>
       </QueryClientProvider>
+      <ToastContainer />
     </Suspense>
   );
 };

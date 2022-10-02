@@ -19,7 +19,7 @@ export type ExtractFnReturnType<FnType extends (...args: any) => any> = PromiseV
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type QueryConfig<QueryFnType extends (...args: any) => any> = Omit<
-  UseQueryOptions<ExtractFnReturnType<QueryFnType>>,
+  UseQueryOptions<ExtractFnReturnType<QueryFnType>, AxiosError>,
   'queryKey' | 'queryFn'
 >;
 
