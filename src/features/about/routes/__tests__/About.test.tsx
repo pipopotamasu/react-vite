@@ -7,5 +7,6 @@ describe('About', () => {
       ui: <About />,
     });
     await findByText('Hello vite-react!');
+    await findByText('Home');
   });
 });
