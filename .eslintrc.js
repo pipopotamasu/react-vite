@@ -51,5 +51,11 @@ module.exports = {
     'jest/require-top-level-describe': 'error',
     'jest/no-disabled-tests': 'off',
     'no-console': 'error',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['@/features/*/*'],
+      },
+    ],
   },
 };
