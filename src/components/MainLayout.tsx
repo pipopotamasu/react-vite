@@ -14,7 +14,7 @@ export const MainLayout = ({ children }: { children: ReactNode }) => {
           </li>
         </ul>
       </aside>
-      <main>{children}</main>
+      <main className="grow p-8">{children}</main>
     </div>
   );
 };

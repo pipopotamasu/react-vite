@@ -1,12 +1,12 @@
 import { Link as Base, type LinkProps } from '@tanstack/react-location';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export const Link = ({ className, children, ...props }: LinkProps) => {
   return (
     <Base
-      className={clsx('hover:underline hover:decoration-1', className)}
+      className={twMerge('hover:underline hover:decoration-1', className)}
       getActiveProps={() => ({
-        className: 'text-sky-400',
+        className: 'text-sky-400 underline decoration-1',
       })}
       {...props}
     >
