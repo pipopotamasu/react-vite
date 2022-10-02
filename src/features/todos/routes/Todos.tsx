@@ -1,15 +1,18 @@
+import { MainLayout } from '@/components/MainLayout';
 import { useTodos } from '../api/getTodos';
 
 export const Todos = () => {
-  const { data, isLoading } = useTodos({ config: { useErrorBoundary: false } });
+  const { data, isLoading } = useTodos();
 
   if (isLoading) return <>loading...</>;
 
   return (
-    <ul>
-      {data?.todos.map((todo) => {
-        return <li key={todo.id}>{todo.title}</li>;
-      })}
-    </ul>
+    <MainLayout>
+      <ul>
+        {data?.todos.map((todo) => {
+          return <li key={todo.id}>{todo.title}</li>;
+        })}
+      </ul>
+    </MainLayout>
   );
 };
