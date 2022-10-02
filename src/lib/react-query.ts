@@ -19,9 +19,11 @@ export type ExtractFnReturnType<FnType extends (...args: any) => any> = PromiseV
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type QueryConfig<QueryFnType extends (...args: any) => any> = Omit<
-  UseQueryOptions<ExtractFnReturnType<QueryFnType>>,
+  UseQueryOptions<ExtractFnReturnType<QueryFnType>, AxiosError>,
   'queryKey' | 'queryFn'
 >;
+
+export type UseQueryConfig<T> = Omit<T, 'queryKey' | 'queryFn'>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type MutationConfig<MutationFnType extends (...args: any) => any> = UseMutationOptions<

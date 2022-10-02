@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import type { AxiosError } from 'axios';
 import { axios } from '@/lib/axios';
 
 import type { ExtractFnReturnType, QueryConfig } from '@/lib/react-query';
@@ -20,7 +21,7 @@ type UseTodosOptions = {
 };
 
 export const useTodos = ({ config }: UseTodosOptions = {}) => {
-  return useQuery<ExtractFnReturnType<QueryFnType>>({
+  return useQuery<ExtractFnReturnType<QueryFnType>, AxiosError>({
     ...config,
     queryKey: ['todos'],
     queryFn: () => getTodos(),
