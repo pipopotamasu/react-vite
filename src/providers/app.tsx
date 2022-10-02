@@ -8,10 +8,7 @@ import { routes } from '@/routes';
 
 const ErrorFallback = () => {
   return (
-    <div
-      className="bg-gray-700 text-red-500 w-screen h-screen flex flex-col justify-center items-center"
-      role="alert"
-    >
+    <div className="text-red-500 flex flex-col justify-center items-center" role="alert">
       <h2 className="text-lg font-semibold">Ooops, something went wrong :( </h2>
       <button className="mt-4" onClick={() => window.location.assign(window.location.origin)}>
         Refresh

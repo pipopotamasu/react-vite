@@ -1,9 +1,10 @@
+import { MainLayout } from '@/components/MainLayout';
 import reactLogo from '@/assets/react-logo.svg';
 import viteLogo from '@/assets/vite-logo.svg';
 
 export const About = () => {
   return (
-    <div className="h-full py-16 bg-gray-700 text-neutral-100">
+    <MainLayout>
       <header className="flex flex-col items-center">
         <h1 className="font-bold text-4xl mb-4">Hello vite-react!</h1>
         <div className="flex justify-center pl-8">
@@ -11,7 +12,7 @@ export const About = () => {
           <img src={reactLogo} alt="react-logo" className="w-72" />
         </div>
       </header>
-      <main className="py-8 flex flex-col items-center bg-gray-700">
+      <div className="py-8 flex flex-col items-center bg-gray-700">
         <section className="w-2/5 mb-4">
           <h2 className="text-2xl mb-3">Features</h2>
           <ul className="list-disc pl-6">
@@ -23,7 +24,7 @@ export const About = () => {
             <li>Setup github actoins(CI) which makes test, lint, type check run</li>
           </ul>
         </section>
-      </main>
-    </div>
+      </div>
+    </MainLayout>
   );
 };
