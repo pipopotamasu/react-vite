@@ -23,8 +23,6 @@ export type QueryConfig<QueryFnType extends (...args: any) => any> = Omit<
   'queryKey' | 'queryFn'
 >;
 
-export type UseQueryConfig<T> = Omit<T, 'queryKey' | 'queryFn'>;
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type MutationConfig<MutationFnType extends (...args: any) => any> = UseMutationOptions<
   ExtractFnReturnType<MutationFnType>,
