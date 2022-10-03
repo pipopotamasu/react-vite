@@ -1,11 +1,8 @@
-import { render } from '@/test/testUtils';
-import { About } from '../About';
+import { renderApp } from '@/test/testUtils';
 
 describe('About', () => {
   it('renders', async () => {
-    const { findByText } = render({
-      ui: <About />,
-    });
+    const { findByText } = renderApp({ route: '/' });
     await findByText('Hello vite-react!');
   });
 });
