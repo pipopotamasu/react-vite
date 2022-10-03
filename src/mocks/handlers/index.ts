@@ -1,3 +1,3 @@
-import { todosHandler } from './todos';
+import { todosHandlers } from './todos';
 
-export const handlers = [todosHandler];
+export const handlers = [...todosHandlers];
