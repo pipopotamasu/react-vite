@@ -6,11 +6,11 @@ import type { ExtractFnReturnType, QueryConfig } from '@/lib/react-query';
 
 import type { Todo } from '../types';
 
-type Response = {
+type ResponseBody = {
   todos: Todo[];
 };
 
-export const getTodos = (): Promise<Response> => {
+const getTodos = (): Promise<ResponseBody> => {
   return axios.get('/todos');
 };
 
