@@ -10,7 +10,7 @@ type ResponseBody = {
   todos: Todo[];
 };
 
-const getTodos = (): Promise<ResponseBody> => {
+export const getTodos = (): Promise<ResponseBody> => {
   return axios.get('/todos');
 };
 
