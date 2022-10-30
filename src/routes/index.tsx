@@ -13,5 +13,8 @@ export const routes = [
           queryClient.getQueryData('todos') ?? (await queryClient.fetchQuery('todos', getTodos)),
       };
     },
+    // errorElement feature is broken.
+    // https://github.com/TanStack/router/issues/255
+    errorElement: <>Error</>,
   },
 ];
