@@ -29,8 +29,6 @@ export const Todos = () => {
     setInput(val);
   };
 
-  if (todosQuery.isLoading) return <>loading...</>;
-
   return (
     <MainLayout>
       <h1 className="font-bold text-4xl mb-4">Todo App</h1>
