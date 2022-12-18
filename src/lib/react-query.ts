@@ -33,9 +33,7 @@ const queryConfig: DefaultOptions<AxiosError> = {
     refetchOnWindowFocus: false,
     retry: false,
     suspense: true,
-    onError,
-  },
-  mutations: {
+    useErrorBoundary: true,
     onError,
   },
 };

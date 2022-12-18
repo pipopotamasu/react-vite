@@ -15,6 +15,9 @@ export const Todos = () => {
         toast.info('New todo has been added.');
         setInput('');
       },
+      onError() {
+        toast.error('Failed to create new todo.');
+      },
     },
   });
 
