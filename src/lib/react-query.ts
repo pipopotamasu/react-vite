@@ -32,6 +32,7 @@ const queryConfig: DefaultOptions<AxiosError> = {
     staleTime: 30000,
     refetchOnWindowFocus: false,
     retry: false,
+    suspense: true,
     onError,
   },
   mutations: {
