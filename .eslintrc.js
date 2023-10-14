@@ -16,7 +16,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'prettier',
   ],
-  plugins: ['react', 'jest', '@typescript-eslint', 'react-hooks', 'jsx-a11y'],
+  plugins: ['react', 'jest', '@typescript-eslint', 'react-hooks', 'jsx-a11y', 'my-project'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
@@ -57,5 +57,6 @@ module.exports = {
         patterns: ['@/features/*/*'],
       },
     ],
+    'my-project/no-template-literals': 1,
   },
 };
