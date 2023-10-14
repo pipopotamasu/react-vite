@@ -1,5 +1,10 @@
 import type { AxiosError } from 'axios';
-import { QueryClient, UseQueryOptions, UseMutationOptions, DefaultOptions } from 'react-query';
+import {
+  QueryClient,
+  type UseQueryOptions,
+  type UseMutationOptions,
+  type DefaultOptions,
+} from 'react-query';
 import type { PromiseValue } from 'type-fest';
 import { toast } from 'react-toastify';
 
