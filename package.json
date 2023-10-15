@@ -15,7 +15,8 @@
     "eslint:fix": "eslint ./src/test.ts --fix && tsc --noEmit",
     "fix": "yarn prettier:write && yarn eslint:fix",
     "prettier:write": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\""
+    "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "tsc:eslint": "tsc --project eslint/tsconfig.json"
   },
   "dependencies": {
     "@tanstack/react-location": "^3.7.4",
@@ -36,6 +37,7 @@
     "@types/react-dom": "^18.2.13",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
+    "@typescript-eslint/utils": "^6.7.5",
     "@vitejs/plugin-react-swc": "^3.4.0",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.51.0",
