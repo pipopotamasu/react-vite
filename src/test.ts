@@ -5,3 +5,5 @@ function foo(hogehoge, fugafuga) {
 }
 
 const bar = (aaaaaa, bbbbbb) => {};
+
+const arrayObj = [{ key: (num) => num + 1 }];
