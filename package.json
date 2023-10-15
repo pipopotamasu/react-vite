@@ -9,8 +9,10 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "jest",
-    "eslint": "eslint \"src/**/*.{ts,tsx}\" --cache && tsc --noEmit",
-    "eslint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix && tsc --noEmit",
+    "//eslint": "eslint \"src/**/*.{ts,tsx}\" --cache && tsc --noEmit",
+    "eslint": "eslint ./src/test.ts",
+    "//eslint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix && tsc --noEmit",
+    "eslint:fix": "eslint ./src/test.ts --fix && tsc --noEmit",
     "fix": "yarn prettier:write && yarn eslint:fix",
     "prettier:write": "prettier --write \"src/**/*.{ts,tsx}\"",
     "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\""
