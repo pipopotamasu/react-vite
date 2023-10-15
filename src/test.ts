@@ -4,6 +4,8 @@ function foo(hogehoge, fugafuga) {
   return 'bar';
 }
 
-const bar = (aaaaaa, bbbbbb) => {};
+const bar1 = (aaaaaa, bbbbbb) => {};
+
+const bar2 = aaaaaa => {};
 
 const arrayObj = [{ key: (num) => num + 1 }];
