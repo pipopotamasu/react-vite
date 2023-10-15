@@ -32,6 +32,22 @@ const rule = utils_1.ESLintUtils.RuleCreator.withoutDocs({
                     });
                 }
             },
+            ArrowFunctionExpression(node) {
+                if (node.params.length > 0) {
+                    node.params.forEach((param) => {
+                        console.log('param', param);
+                        if (!param['typeAnnotation']) {
+                            context.report({
+                                node,
+                                messageId: 'missingAnyType',
+                                fix(fixer) {
+                                    return fixer.insertTextAfter(param, ': any');
+                                },
+                            });
+                        }
+                    });
+                }
+            },
         };
     },
 });
