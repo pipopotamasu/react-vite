@@ -13,13 +13,10 @@ const rule = utils_1.ESLintUtils.RuleCreator.withoutDocs({
         schema: [],
     },
     create: function (context) {
-        console.log('context', context);
         return {
             FunctionDeclaration(node) {
-                console.log('function declaration', node);
                 if (node.params.length > 0) {
                     node.params.forEach((param) => {
-                        console.log('param', param);
                         if (!param['typeAnnotation']) {
                             context.report({
                                 node,
@@ -34,18 +31,38 @@ const rule = utils_1.ESLintUtils.RuleCreator.withoutDocs({
             },
             ArrowFunctionExpression(node) {
                 if (node.params.length > 0) {
-                    node.params.forEach((param) => {
-                        console.log('param', param);
-                        if (!param['typeAnnotation']) {
-                            context.report({
-                                node,
-                                messageId: 'missingAnyType',
-                                fix(fixer) {
-                                    return fixer.insertTextAfter(param, ': any');
-                                },
-                            });
-                        }
-                    });
+                    if (node.params.length === 1) {
+                        // const first = context.getSourceCode().getFirstToken(node, node.async ? 1 : 0);
+                        // const before = context.getSourceCode().getTokenBefore(first);
+                        // console.log('first', first);
+                        // console.log('before', before);
+                        node.params.forEach((param) => {
+                            console.log('param', param);
+                            if (!param['typeAnnotation']) {
+                                context.report({
+                                    node,
+                                    messageId: 'missingAnyType',
+                                    fix(fixer) {
+                                        return fixer.insertTextAfter(param, ': any');
+                                    },
+                                });
+                            }
+                        });
+                    }
+                    else {
+                        node.params.forEach((param) => {
+                            console.log('param', param);
+                            if (!param['typeAnnotation']) {
+                                context.report({
+                                    node,
+                                    messageId: 'missingAnyType',
+                                    fix(fixer) {
+                                        return fixer.insertTextAfter(param, ': any');
+                                    },
+                                });
+                            }
+                        });
+                    }
                 }
             },
         };
