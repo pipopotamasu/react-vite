@@ -29,6 +29,21 @@ const rule = utils_1.ESLintUtils.RuleCreator.withoutDocs({
                     });
                 }
             },
+            FunctionExpression(node) {
+                if (node.params.length > 0) {
+                    node.params.forEach((param) => {
+                        if (!param['typeAnnotation']) {
+                            context.report({
+                                node,
+                                messageId: 'missingAnyType',
+                                fix(fixer) {
+                                    return fixer.insertTextAfter(param, ': any');
+                                },
+                            });
+                        }
+                    });
+                }
+            },
             ArrowFunctionExpression(node) {
                 if (node.params.length > 0) {
                     if (node.params.length === 1) {

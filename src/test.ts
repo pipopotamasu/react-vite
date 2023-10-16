@@ -1,9 +1,9 @@
 // FunctionDeclaration
-function foo1(hogehoge, fugafuga) {
+function foo1(firstArg, secondArg) {
   return 'bar';
 }
 
-function foo2({ hoge }, { fuga }) {
+function foo2({ key1 }, { key2 }) {
   return 'bar';
 }
 
@@ -11,11 +11,11 @@ const arrayObjFunc = [{ key: function (num) { return num + 1 } }];
 
 // ArrowFunctionExpression
 //// more than 1 param
-const bar1 = (aaaaaa: any, bbbbbb: any) => {};
+const bar1 = (firstArg, secondArg) => {};
 
-const bar2 = ({ aaaaa }: any, { bbbbbb }: any) => {};
+const bar2 = ({ key1 }, { key2 }) => {};
 
-const bar3 = async ({ aaaaa }: any, { bbbbbb }: any) => {};
+const bar3 = async ({ key1 }, { key2 }) => {};
 
 const arrayObjArrowFunc = [{ key: (num) => num + 1 }];
 
