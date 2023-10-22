@@ -1,4 +1,5 @@
 import { ESLintUtils } from '@typescript-eslint/utils';
+import ts from 'typescript';
 
 const rule = ESLintUtils.RuleCreator.withoutDocs({
   defaultOptions: [],
@@ -14,9 +15,12 @@ const rule = ESLintUtils.RuleCreator.withoutDocs({
   create: function (context) {
     return {
       FunctionDeclaration(node) {
-        if (node.params.length > 0) {
-          node.params.forEach((param) => {
-            if (!param['typeAnnotation']) {
+        node.params.forEach((param) => {
+          if (!param['typeAnnotation']) {
+            const parserServices = ESLintUtils.getParserServices(context);
+            const type = parserServices.getTypeAtLocation(param);
+
+            if (type.flags === ts.TypeFlags.Any) {
               context.report({
                 node,
                 messageId: 'missingAnyType',
@@ -25,13 +29,16 @@ const rule = ESLintUtils.RuleCreator.withoutDocs({
                 },
               });
             }
-          });
-        }
+          }
+        });
       },
       FunctionExpression(node) {
-        if (node.params.length > 0) {
-          node.params.forEach((param) => {
-            if (!param['typeAnnotation']) {
+        node.params.forEach((param) => {
+          if (!param['typeAnnotation']) {
+            const parserServices = ESLintUtils.getParserServices(context);
+            const type = parserServices.getTypeAtLocation(param);
+
+            if (type.flags === ts.TypeFlags.Any) {
               context.report({
                 node,
                 messageId: 'missingAnyType',
@@ -40,43 +47,26 @@ const rule = ESLintUtils.RuleCreator.withoutDocs({
                 },
               });
             }
-          });
-        }
+          }
+        });
       },
       ArrowFunctionExpression(node) {
-        if (node.params.length > 0) {
-          if (node.params.length === 1) {
-            // const first = context.getSourceCode().getFirstToken(node, node.async ? 1 : 0);
-            // const before = context.getSourceCode().getTokenBefore(first);
-            // console.log('first', first);
-            // console.log('before', before);
-            node.params.forEach((param) => {
-              console.log('param', param);
-              if (!param['typeAnnotation']) {
-                context.report({
-                  node,
-                  messageId: 'missingAnyType',
-                  fix(fixer) {
-                    return fixer.insertTextAfter(param, ': any');
-                  },
-                });
-              }
-            });
-          } else {
-            node.params.forEach((param) => {
-              console.log('param', param);
-              if (!param['typeAnnotation']) {
-                context.report({
-                  node,
-                  messageId: 'missingAnyType',
-                  fix(fixer) {
-                    return fixer.insertTextAfter(param, ': any');
-                  },
-                });
-              }
-            });
+        node.params.forEach((param) => {
+          if (!param['typeAnnotation']) {
+            const parserServices = ESLintUtils.getParserServices(context);
+            const type = parserServices.getTypeAtLocation(param);
+
+            if (type.flags === ts.TypeFlags.Any) {
+              context.report({
+                node,
+                messageId: 'missingAnyType',
+                fix(fixer) {
+                  return fixer.insertTextAfter(param, ': any');
+                },
+              });
+            }
           }
-        }
+        });
       },
     };
   },

@@ -16,7 +16,7 @@
     "fix": "yarn prettier:write && yarn eslint:fix",
     "prettier:write": "prettier --write \"src/**/*.{ts,tsx}\"",
     "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\"",
-    "tsc:eslint": "tsc --project eslint/tsconfig.json"
+    "tsc:eslint": "tsc --project eslint/tsconfig.json && npm install --save-dev file:eslint"
   },
   "dependencies": {
     "@tanstack/react-location": "^3.7.4",
