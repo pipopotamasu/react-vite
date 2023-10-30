@@ -3859,6 +3859,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-no-implicit-any@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "eslint-plugin-no-implicit-any@npm:0.0.1"
+  peerDependencies:
+    "@typescript-eslint/parser": ^6.0.0
+    eslint: ^8.0.0
+    typescript: ^5.0.0
+  checksum: d59ad8f0f6ba4c16ebf4b5abc5a53fa7415feb9f5e90b17b0f51a704cb959e10db32fc0f088efbaa8859ddee25460cbd1f0c692dcf7645c3dcb322be716e06f3
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-react-hooks@npm:^4.6.0":
   version: 4.6.0
   resolution: "eslint-plugin-react-hooks@npm:4.6.0"
@@ -8705,6 +8716,7 @@ resolve@^1.20.0:
     eslint-config-prettier: ^9.0.0
     eslint-plugin-jest: ^27.4.2
     eslint-plugin-jsx-a11y: ^6.7.1
+    eslint-plugin-no-implicit-any: ^0.0.1
     eslint-plugin-react: ^7.33.2
     eslint-plugin-react-hooks: ^4.6.0
     jest: ^29.7.0

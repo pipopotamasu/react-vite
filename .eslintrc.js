@@ -16,7 +16,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'prettier',
   ],
-  plugins: ['react', 'jest', '@typescript-eslint', 'react-hooks', 'jsx-a11y'],
+  plugins: ['react', 'jest', '@typescript-eslint', 'react-hooks', 'jsx-a11y', 'no-implicit-any'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
@@ -30,6 +30,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-implicit-any/no-implicit-any': 1,
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
