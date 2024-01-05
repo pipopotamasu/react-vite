@@ -16,7 +16,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'prettier',
   ],
-  plugins: ['react', 'jest', '@typescript-eslint', 'react-hooks', 'jsx-a11y'],
+  plugins: ['react', 'jest', '@typescript-eslint', 'react-hooks', 'jsx-a11y', 'no-implicit-any'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
@@ -30,6 +30,12 @@ module.exports = {
     },
   },
   rules: {
+    // NOTE: for test start
+    'no-implicit-any/no-implicit-any': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    // '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true }],
+    // NOTE: for test end
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
@@ -37,7 +43,6 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true }],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'jest/consistent-test-it': [
