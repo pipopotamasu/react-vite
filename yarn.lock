@@ -1981,7 +1981,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:7.1.1":
+"@typescript-eslint/types@npm:7.1.1, @typescript-eslint/types@npm:^7.1.1":
   version: 7.1.1
   resolution: "@typescript-eslint/types@npm:7.1.1"
   checksum: 42be2d881728d99ab50cb4133656d2f54770304a5dca83777a032b9ec20f6e11ca38db79d2b77b29b9cb41a052aa872f4ac2e37b61d40b438efe91e355ec798f
@@ -2025,7 +2025,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:7.1.1":
+"@typescript-eslint/utils@npm:7.1.1, @typescript-eslint/utils@npm:^7.1.1":
   version: 7.1.1
   resolution: "@typescript-eslint/utils@npm:7.1.1"
   dependencies:
@@ -4118,6 +4118,20 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: 3dec00e2a3089c4c61ac062e4196a70985fb7eda1fd67fe035363d92578debde92fdb8ed2e472321fc0d71e75f4a1e8888c6a3218c14dd93c8e8d19eb6f51554
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-no-implicit-any@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "eslint-plugin-no-implicit-any@npm:2.0.0"
+  dependencies:
+    "@typescript-eslint/types": ^7.1.1
+    "@typescript-eslint/utils": ^7.1.1
+  peerDependencies:
+    "@typescript-eslint/parser": ^7.0.0
+    eslint: ^8.56.0
+    typescript: ^5.0.0
+  checksum: acab278ddb346ac73fb98d5d89a3a0db5d58cb174eda0fa7217ab8c9f4decf731210a3ecbdaeb2b84f731211c470262100b77d94c2ee27daaf43d45ca2ad6ab3
   languageName: node
   linkType: hard
 
@@ -9275,6 +9289,7 @@ resolve@^1.20.0:
     eslint-config-prettier: ^9.1.0
     eslint-plugin-jest: ^27.9.0
     eslint-plugin-jsx-a11y: ^6.8.0
+    eslint-plugin-no-implicit-any: ^2.0.0
     eslint-plugin-react: ^7.34.0
     eslint-plugin-react-hooks: ^4.6.0
     jest: ^29.7.0
