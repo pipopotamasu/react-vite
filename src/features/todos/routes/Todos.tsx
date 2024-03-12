@@ -32,6 +32,8 @@ export const Todos = () => {
     setInput(val);
   };
 
+  console.log(todosQuery);
+
   return (
     <MainLayout>
       <h1 className="font-bold text-4xl mb-4">Todo App</h1>

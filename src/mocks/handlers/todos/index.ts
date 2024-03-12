@@ -1,4 +1,4 @@
-import { rest } from 'msw';
+import { http, HttpResponse } from 'msw';
 import type { Todo } from '@/features/todos';
 
 const todos: Todo[] = [
@@ -8,26 +8,22 @@ const todos: Todo[] = [
 ];
 
 export const todosHandlers = [
-  rest.get('/todos', (_, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json({
-        todos,
-      })
-    );
+  http.get('/todos', () => {
+    return HttpResponse.json(JSON.stringify({ todos }), { status: 200 });
   }),
-  rest.post('/todos', async (req, res, ctx) => {
-    const body = await req.json<Omit<Todo, 'id'>>();
+  http.post('/todos', async ({ request }) => {
+    const body = await request.json();
+    const { title } = body as Pick<Todo, 'title'>;
 
-    return res(
-      ctx.status(200),
-      ctx.json({
+    return HttpResponse.json(
+      JSON.stringify({
         todo: {
           id: 4,
-          title: body.title,
+          title,
           done: false,
         },
-      })
+      }),
+      { status: 201 }
     );
   }),
 ];
