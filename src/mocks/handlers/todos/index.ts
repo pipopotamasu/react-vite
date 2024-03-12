@@ -9,20 +9,20 @@ const todos: Todo[] = [
 
 export const todosHandlers = [
   http.get('/todos', () => {
-    return HttpResponse.json(JSON.stringify({ todos }), { status: 200 });
+    return HttpResponse.json({ todos }, { status: 200 });
   }),
   http.post('/todos', async ({ request }) => {
     const body = await request.json();
     const { title } = body as Pick<Todo, 'title'>;
 
     return HttpResponse.json(
-      JSON.stringify({
+      {
         todo: {
           id: 4,
           title,
           done: false,
         },
-      }),
+      },
       { status: 201 }
     );
   }),

@@ -5,20 +5,26 @@ import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 import App from './App';
 
-if (import.meta.env.MODE === 'development') {
+async function enableMocking() {
+  if (import.meta.env.MODE !== 'development') {
+    return;
+  }
+
   const { worker } = await import('./mocks/browser');
-  worker.start({
+  return worker.start({
     onUnhandledRequest: 'bypass',
   });
 }
 
-const container = document.getElementById('root');
+enableMocking().then(() => {
+  const container = document.getElementById('root');
 
-if (container) {
-  const root = createRoot(container);
-  root.render(
-    <StrictMode>
-      <App />
-    </StrictMode>
-  );
-}
+  if (container) {
+    const root = createRoot(container);
+    root.render(
+      <StrictMode>
+        <App />
+      </StrictMode>
+    );
+  }
+});
