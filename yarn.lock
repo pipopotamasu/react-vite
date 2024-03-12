@@ -9149,6 +9149,13 @@ resolve@^1.20.0:
   languageName: node
   linkType: hard
 
+"undici@npm:^6.7.1":
+  version: 6.7.1
+  resolution: "undici@npm:6.7.1"
+  checksum: 60380d69480e1dbc5e567b12234cd7dd3ee8d487d572bcc746ce0de717b6d98f78daec46de9df6dd9eeae7b41b7175837e9b29d02b8c2d38ca81c08cc4ad5b41
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^1.1.1":
   version: 1.1.1
   resolution: "unique-filename@npm:1.1.1"
@@ -9285,6 +9292,7 @@ resolve@^1.20.0:
     tailwindcss: ^3.4.1
     ts-jest: ^29.1.2
     typescript: ^5.4.2
+    undici: ^6.7.1
     vite: ^5.1.6
   languageName: unknown
   linkType: soft
